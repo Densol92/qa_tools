@@ -1,0 +1,14 @@
+from unittest import TestCase, main
+__author__ = "{{ author.name }}"
+__email__ = "{{ author.email }}"
+
+
+class {{test_suite_name.replace(' ', '')}}(TestCase):
+    {% for test in tests %}
+    def test_{{test.title.replace(' ', '_').replace('-', '_')}}(self):
+        """TestRail ID: <C{{test.id}}>"""
+    {% endfor %}
+
+if __name__ == "__main__":
+    main()
+
